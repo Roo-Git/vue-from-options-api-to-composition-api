@@ -1,9 +1,12 @@
 import { createApp } from "vue";
+
+import BaseSearch from "./components/UI/BaseSearch.vue";
+import BaseContainer from "./components/UI/BaseContainer.vue";
 import App from "./App.vue";
-import router from "./router";
 
 const app = createApp(App);
 
-app.use(router);
+app.component("base-search", BaseSearch);
+app.component("base-container", BaseContainer);
 
 app.mount("#app");
