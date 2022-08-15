@@ -13,11 +13,16 @@
 export default {
   props: ["searchTerm"],
   emits: ["search"],
-  methods: {
-    search(event) {
-      this.$emit("search", event.target.value);
-    },
+  setup(context) {
+    function search(event) {
+      context.emit("search", event.target.value);
+    }
+    return { search };
   },
+
+  // search(event) {
+  //   this.$emit("search", event.target.value);
+  // },
 };
 </script>
 
